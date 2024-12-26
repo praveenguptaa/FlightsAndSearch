@@ -4,6 +4,7 @@ class CityRepository {
     async createCity({name}){
         try{
             const city = await City.create({name});
+            return city;
         } catch(error){
             console.log("Something went wrong in city-repository layer");
             throw {error};
@@ -17,6 +18,7 @@ class CityRepository {
                     id: cityid
                 }
             });
+            return true;
         } catch(error){
             console.log("Something went wrong in city-repository layer");
             throw {error};
